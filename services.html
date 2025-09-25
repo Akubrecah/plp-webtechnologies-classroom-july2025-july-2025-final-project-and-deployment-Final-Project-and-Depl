@@ -3,19 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional design, printing, and branding services offered by Akubrecah Entertainment">
   <title>Akubrecah Entertainment - Services</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <div class="main-container">
-    <header class="site-header"> ... </header>
-    <nav class="main-nav"> ... </nav>
+    <header class="site-header" role="banner">
+      <div class="header-content">
+        <h1>Akubrecah Entertainment</h1>
+        <p>Design | Print | Brand | Kapenguria, West Pokot</p>
+      </div>
+    </header>
+    
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content" role="main">
       <section id="services">
         <h2>Our Services</h2>
-        <p>We provide comprehensive digital solutions...</p>
+        <p>We provide comprehensive digital solutions including graphic design, high-quality printing, branding, and cybercafe services.</p>
 
         <div class="demo-controls">
           <button id="calculate-price">Calculate Printing Price</button>
@@ -23,29 +39,62 @@
           <button id="hide-all-details">Hide All Details</button>
         </div>
 
-        <div class="discount-banner" id="discount-banner">Special Offer: 15% off!</div>
+        <div class="discount-banner" id="discount-banner" role="alert" hidden>Special Offer: 15% off on all printing services this week!</div>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="service-icon" aria-hidden="true"><i class="fas fa-paint-brush"></i></div>
             <h3>Design Services</h3>
-            <p>Professional graphic design...</p>
-            <button class="detail-button">Show Details</button>
-            <div class="service-detail"><p>Starting at KES 1500...</p></div>
+            <p>Professional graphic design for all your business needs.</p>
+            <button class="detail-button" aria-expanded="false">Show Details</button>
+            <div class="service-detail" hidden>
+              <p>Starting at KES 1500. Services include: Logo design, Business cards, Flyers, Brochures, Social media graphics</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><i class="fas fa-print"></i></div>
+            <div class="service-icon" aria-hidden="true"><i class="fas fa-print"></i></div>
             <h3>Print Solutions</h3>
-            <p>High-quality printing services...</p>
-            <button class="detail-button">Show Details</button>
-            <div class="service-detail"><p>Black & white: KES 5...</p></div>
+            <p>High-quality printing services for documents and marketing materials.</p>
+            <button class="detail-button" aria-expanded="false">Show Details</button>
+            <div class="service-detail" hidden>
+              <p>Black & white: KES 5 per page, Color: KES 20 per page. We also offer binding and laminating services.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true"><i class="fas fa-laptop"></i></div>
+            <h3>Cybercafe Services</h3>
+            <p>Internet access, computer rental, and digital assistance.</p>
+            <button class="detail-button" aria-expanded="false">Show Details</button>
+            <div class="service-detail" hidden>
+              <p>Internet browsing: KES 50 per hour, Printing: KES 5-20 per page, Computer rental: KES 100 per hour</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <aside class="sidebar"> ... </aside>
-    <footer class="site-footer"> ... </footer>
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar-widget">
+        <h3>Popular Services</h3>
+        <ul>
+          <li>Document Printing</li>
+          <li>Business Card Design</li>
+          <li>Photo Printing</li>
+          <li>Internet Services</li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="js/scripts.js"></script>
 </body>

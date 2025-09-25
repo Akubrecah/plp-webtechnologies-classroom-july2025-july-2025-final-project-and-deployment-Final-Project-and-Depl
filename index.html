@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akubrecah Entertainment - Professional design, print, and branding services in Kapenguria, West Pokot">
   <title>Akubrecah Entertainment - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <div class="main-container">
     <!-- Dark Mode Toggle -->
     <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
-      <i class="fas fa-moon"></i>
+      <i class="fas fa-moon" aria-hidden="true"></i>
     </button>
 
     <!-- Header -->
-    <header class="site-header">
+    <header class="site-header" role="banner">
       <div class="header-content">
         <h1>Akubrecah Entertainment</h1>
         <p>Design | Print | Brand | Kapenguria, West Pokot</p>
@@ -23,9 +26,9 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -33,19 +36,19 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content" role="main">
       <section id="home">
         <h2>Welcome to Akubrecah Entertainment</h2>
-        <p>Akubrecah Entertainment is a modern cybercafe offering a wide range of digital services...</p>
+        <p>Akubrecah Entertainment is a modern cybercafe offering a wide range of digital services including graphic design, printing, branding, and internet services in Kapenguria, West Pokot.</p>
 
         <!-- Counter Game -->
         <div class="counter-game">
           <h3>Counter Game</h3>
-          <div class="counter-display" id="counter-value">0</div>
+          <div class="counter-display" id="counter-value" aria-live="polite">0</div>
           <div class="counter-buttons">
-            <button id="decrement-btn">-1</button>
-            <button id="reset-btn">Reset</button>
-            <button id="increment-btn">+1</button>
+            <button id="decrement-btn" aria-label="Decrease counter">-1</button>
+            <button id="reset-btn" aria-label="Reset counter">Reset</button>
+            <button id="increment-btn" aria-label="Increase counter">+1</button>
           </div>
         </div>
 
@@ -66,19 +69,31 @@
         <div class="faq-section">
           <h3>Frequently Asked Questions</h3>
           <div class="faq-item">
-            <div class="faq-question"><span>What are your business hours?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>We are open Monday to Friday...</p></div>
+            <button class="faq-question" aria-expanded="false">
+              <span>What are your business hours?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>We are open Monday to Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM. We are closed on Sundays.</p>
+            </div>
           </div>
           <div class="faq-item">
-            <div class="faq-question"><span>Do you offer design services?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>Yes, we offer professional graphic design services...</p></div>
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you offer design services?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Yes, we offer professional graphic design services including logo design, business cards, flyers, brochures, and social media graphics.</p>
+            </div>
           </div>
         </div>
 
         <!-- Animation Demo -->
         <div class="animation-demo">
           <h3>Animation Playground</h3>
-          <div class="animated-box" id="animated-box"><p>Click buttons to animate me!</p></div>
+          <div class="animated-box" id="animated-box" aria-live="polite">
+            <p>Click buttons to animate me!</p>
+          </div>
           <div class="demo-controls">
             <button id="bounce-btn">Bounce</button>
             <button id="spin-btn">Spin</button>
@@ -89,9 +104,35 @@
       </section>
     </main>
 
-    <!-- Sidebar & Footer (shared) -->
-    <aside class="sidebar"> ... same as original ... </aside>
-    <footer class="site-footer"> ... same as original ... </footer>
+    <!-- Sidebar -->
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar-widget">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="services.html#printing">Printing Services</a></li>
+          <li><a href="services.html#design">Design Services</a></li>
+          <li><a href="contact.html">Get Quote</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Kapenguria, West Pokot</p>
+        <p><i class="fas fa-phone"></i> +254 7XX XXX XXX</p>
+        <p><i class="fas fa-envelope"></i> info@akubrecah.com</p>
+      </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="js/scripts.js"></script>
 </body>

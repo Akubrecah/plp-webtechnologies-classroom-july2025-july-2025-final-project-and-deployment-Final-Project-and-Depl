@@ -3,33 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Akubrecah Entertainment's mission, vision, and story in Kapenguria">
   <title>Akubrecah Entertainment - About</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <div class="main-container">
-    <!-- Shared header & nav -->
-    <header class="site-header"> ... </header>
-    <nav class="main-nav"> ... </nav>
+    <header class="site-header" role="banner">
+      <div class="header-content">
+        <h1>Akubrecah Entertainment</h1>
+        <p>Design | Print | Brand | Kapenguria, West Pokot</p>
+      </div>
+    </header>
+    
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content" role="main">
       <section id="about">
         <h2>Our Story</h2>
-        <p>Founded in 2024 by Powel Mwenesi...</p>
+        <p>Founded in 2024 by Powel Mwenesi, Akubrecah Entertainment was established to meet the growing digital needs of Kapenguria and West Pokot County. We recognized the need for professional digital services in the region and committed to providing high-quality solutions.</p>
 
         <div class="mission-vision">
-          <article class="mission"><h3>Mission</h3><p>To provide affordable, high-quality digital...</p></article>
-          <article class="vision"><h3>Vision</h3><p>To become the leading cybercafe...</p></article>
+          <article class="mission">
+            <h3>Mission</h3>
+            <p>To provide affordable, high-quality digital and printing services that empower businesses, students, and individuals in West Pokot County to achieve their goals.</p>
+          </article>
+          <article class="vision">
+            <h3>Vision</h3>
+            <p>To become the leading cybercafe and digital solutions provider in Western Kenya, known for reliability, quality, and excellent customer service.</p>
+          </article>
         </div>
 
         <h3>Market Analysis</h3>
         <h4>Target Market</h4>
         <ul id="target-market">
-          <li>Students...</li>
-          <li>Professionals...</li>
-          <li>Small Businesses...</li>
+          <li><strong>Students:</strong> Need printing, typing, and research services</li>
+          <li><strong>Professionals:</strong> Require document processing and business services</li>
+          <li><strong>Small Businesses:</strong> Need branding, design, and marketing materials</li>
+          <li><strong>Local Government:</strong> Require printing and document services</li>
         </ul>
 
         <div class="demo-controls">
@@ -39,9 +60,28 @@
       </section>
     </main>
 
-    <!-- Sidebar & Footer -->
-    <aside class="sidebar"> ... </aside>
-    <footer class="site-footer"> ... </footer>
+    <aside class="sidebar" role="complementary">
+      <div class="sidebar-widget">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>Local expertise</li>
+          <li>Competitive pricing</li>
+          <li>Fast turnaround</li>
+          <li>Quality guaranteed</li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2024 Akubrecah Entertainment. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="js/scripts.js"></script>
 </body>
