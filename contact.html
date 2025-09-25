@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akubrecah Entertainment - Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <header class="site-header"> ... </header>
+    <nav class="main-nav"> ... </nav>
+
+    <main class="main-content">
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to inquire about our services? Fill out the form below:</p>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error-message" id="name-error">Please enter your full name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message" id="email-error">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <div class="error-message" id="message-error">Please enter a message</div>
+          </div>
+
+          <button type="submit" id="submit-btn">Send Message</button>
+          <div class="success-message" id="form-success">Thank you for your message!</div>
+        </form>
+      </section>
+    </main>
+
+    <aside class="sidebar"> ... </aside>
+    <footer class="site-footer"> ... </footer>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
