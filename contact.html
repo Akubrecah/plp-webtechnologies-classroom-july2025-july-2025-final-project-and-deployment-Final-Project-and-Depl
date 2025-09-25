@@ -7,88 +7,536 @@
   <title>Akubrecah Entertainment - Contact</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    
+    .col-12, .col-6 {
+      padding: 0 15px;
+    }
+    
+    .col-12 {
+      width: 100%;
+    }
+    
+    .col-6 {
+      width: 50%;
+    }
+    
+    /* Header Styles */
+    .site-header {
+      background-color: #191919;
+      color: #fff;
+      padding: 15px 0;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .site-header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    
+    .site-header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Navigation */
+    .main-nav {
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .nav-list {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .nav-list li {
+      margin: 0 15px;
+    }
+    
+    .nav-list a {
+      display: block;
+      padding: 15px 0;
+      color: #333;
+      font-weight: 500;
+      position: relative;
+    }
+    
+    .nav-list a:hover,
+    .nav-list a[aria-current="page"] {
+      color: #006cff;
+    }
+    
+    .nav-list a[aria-current="page"]:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #006cff;
+    }
+    
+    /* Page Title Section */
+    .ct-pagetitle {
+      background-image: url('https://dahliaspacetech.com/wp-content/uploads/2023/03/h9-section1.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    
+    .ct-pagetitle:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .ct-page-title-holder {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .ct-page-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 80px 0;
+    }
+    
+    /* Contact Section */
+    #contact {
+      margin-bottom: 60px;
+    }
+    
+    #contact h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #191919;
+    }
+    
+    #contact > p {
+      margin-bottom: 40px;
+      font-size: 16px;
+      color: #666;
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 5px;
+      margin-bottom: 40px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #006cff;
+    }
+    
+    .error-message {
+      color: #d9534f;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    button[type="submit"] {
+      background-color: #006cff;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #0056cc;
+    }
+    
+    .success-message {
+      background-color: #dff0d8;
+      color: #3c763d;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 20px;
+      display: none;
+    }
+    
+    /* Contact Info */
+    .contact-info {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 5px;
+    }
+    
+    .contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #191919;
+    }
+    
+    .contact-info p {
+      margin-bottom: 10px;
+      color: #666;
+    }
+    
+    .contact-info strong {
+      color: #333;
+    }
+    
+    /* Map Section */
+    .map-section {
+      margin-bottom: 60px;
+    }
+    
+    .map-container {
+      height: 400px;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Footer CTA */
+    .footer-cta {
+      background-color: #f0f0f0;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .footer-cta h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #191919;
+    }
+    
+    .footer-cta .btn {
+      display: inline-block;
+      background-color: #006cff;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    .footer-cta .btn:hover {
+      background-color: #0056cc;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background-color: #191919;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin-left: 15px;
+      font-size: 18px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: #006cff;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .col-6 {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-list li {
+        margin: 5px 0;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .social-links {
+        margin-top: 15px;
+      }
+      
+      .social-links a {
+        margin: 0 7.5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <div class="main-container">
     <header class="site-header" role="banner">
-      <div class="header-content">
-        <h1>Akubrecah Entertainment</h1>
-        <p>Design | Print | Brand | Kapenguria, West Pokot</p>
+      <div class="container">
+        <div class="header-content">
+          <div>
+            <h1>Akubrecah Entertainment</h1>
+            <p>Design | Print | Brand | Kapenguria, West Pokot</p>
+          </div>
+        </div>
       </div>
     </header>
     
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-
-    <main class="main-content" id="main-content" role="main">
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to inquire about our services? Fill out the form below:</p>
-
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required aria-describedby="name-error">
-            <div class="error-message" id="name-error" role="alert">Please enter your full name</div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required aria-describedby="email-error">
-            <div class="error-message" id="email-error" role="alert">Please enter a valid email</div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
-            <div class="error-message" id="message-error" role="alert">Please enter a message</div>
-          </div>
-
-          <button type="submit" id="submit-btn">Send Message</button>
-          <div class="success-message" id="form-success" role="alert" hidden>Thank you for your message! We'll get back to you soon.</div>
-        </form>
-        
-        <div class="contact-info">
-          <h3>Other Ways to Reach Us</h3>
-          <p><strong>Address:</strong> Kapenguria Town, West Pokot County</p>
-          <p><strong>Phone:</strong> +254 719 299 900</p>
-          <p><strong>Phone:</strong> +254 791 497 858</p>
-          <p><strong>Email:</strong> info@akubrecah.com</p>
-          <p><strong>Business Hours:</strong> Mon-Fri 8:00 AM - 6:00 PM, Sat 9:00 AM - 4:00 PM</p>
-        </div>
-      </section>
-    </main>
-
-    <aside class="sidebar" role="complementary">
-      <div class="sidebar-widget">
-        <h3>Service Areas</h3>
-        <ul>
-          <li>Kapenguria Town</li>
-          <li>West Pokot County</li>
-          <li>Surrounding Areas</li>
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </div>
-    </aside>
+    </nav>
+
+    <!-- Page Title Section -->
+    <section class="ct-pagetitle">
+      <div class="container">
+        <div class="ct-page-title-holder">
+          <h1 class="ct-page-title">Contact</h1>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-content" id="main-content" role="main">
+      <div class="container">
+        <section id="contact">
+          <div class="row">
+            <div class="col-6">
+              <h2>Contact Us</h2>
+              <p>Have questions or want to inquire about our services? Fill out the form below:</p>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required aria-describedby="name-error">
+                  <div class="error-message" id="name-error" role="alert">Please enter your full name</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required aria-describedby="email-error">
+                  <div class="error-message" id="email-error" role="alert">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+                  <div class="error-message" id="message-error" role="alert">Please enter a message</div>
+                </div>
+
+                <button type="submit" id="submit-btn">Send Message</button>
+                <div class="success-message" id="form-success" role="alert" hidden>Thank you for your message! We'll get back to you soon.</div>
+              </form>
+            </div>
+            
+            <div class="col-6">
+              <div class="contact-info">
+                <h3>Other Ways to Reach Us</h3>
+                <p><strong>Address:</strong> Kapenguria Town, West Pokot County</p>
+                <p><strong>Phone:</strong> +254 719 299 900</p>
+                <p><strong>Phone:</strong> +254 791 497 858</p>
+                <p><strong>Email:</strong> info@akubrecah.com</p>
+                <p><strong>Business Hours:</strong> Mon-Fri 8:00 AM - 6:00 PM, Sat 9:00 AM - 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Kapenguria%20Town%2C%20West%20Pokot%20County&#038;t=m&#038;z=15&#038;output=embed&#038;iwloc=near" 
+                    title="Akubrecah Entertainment Location" 
+                    aria-label="Akubrecah Entertainment Location">
+            </iframe>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+      <div class="container">
+        <h3>Looking for Quality Design & Print Services?</h3>
+        <a href="contact.html" class="btn">Get a quote</a>
+      </div>
+    </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div class="footer-content">
-        <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/akubrecah" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="https://x.com/akubrecah" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/akubrecah/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/akubrecah" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/akubrecah" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/akubrecah/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </footer>
   </div>
   <script src="js/scripts.js"></script>
+  <script>
+    // Form validation script
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const successMessage = document.getElementById('form-success');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Reset error messages
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => {
+          msg.style.display = 'none';
+        });
+        
+        // Validate form
+        let isValid = true;
+        
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        
+        if (!name.value.trim()) {
+          document.getElementById('name-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        if (!email.value.trim() || !isValidEmail(email.value)) {
+          document.getElementById('email-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        if (!message.value.trim()) {
+          document.getElementById('message-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        if (isValid) {
+          // Simulate form submission
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          
+          setTimeout(function() {
+            successMessage.style.display = 'block';
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+              successMessage.style.display = 'none';
+            }, 5000);
+          }, 1500);
+        }
+      });
+      
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    });
+  </script>
 </body>
 </html>

@@ -7,106 +7,605 @@
   <title>Akubrecah Entertainment - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Additional styles to match the target website */
+    :root {
+      --primary-color: #7114ef;
+      --secondary-color: #1475f7;
+      --text-color: #333;
+      --light-bg: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    
+    .section-title p {
+      color: #666;
+      font-size: 18px;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Header Styles */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo h1 {
+      font-size: 28px;
+      margin: 0;
+      color: var(--primary-color);
+    }
+    
+    .logo p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .main-nav li {
+      margin: 0 15px;
+    }
+    
+    .main-nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .main-nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://dahliaspacetech.com/wp-content/uploads/2025/08/G1-scaled.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 180px 0 100px;
+      text-align: center;
+    }
+    
+    .hero-content h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Services Section */
+    .services-section {
+      padding: 100px 0;
+      background: var(--light-bg);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    
+    .service-card h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+    
+    .about-content {
+      flex: 1;
+      padding-right: 50px;
+    }
+    
+    .about-image {
+      flex: 1;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    /* Counter Section */
+    .counter-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .counter-item h3 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+      padding: 100px 0;
+      background: var(--light-bg);
+    }
+    
+    .testimonials-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: #222;
+      color: white;
+      padding: 60px 0 30px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: white;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 20px;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      width: 100%;
+    }
+    
+    /* Dark Mode Toggle */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    
+    /* Demo Sections */
+    .demo-section, .counter-game, .faq-section, .animation-demo {
+      background: white;
+      padding: 50px 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .main-nav li {
+        margin: 5px 10px;
+      }
+      
+      .hero-content h2 {
+        font-size: 36px;
+      }
+      
+      .about-section {
+        flex-direction: column;
+      }
+      
+      .about-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
-  <div class="main-container">
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
-      <i class="fas fa-moon" aria-hidden="true"></i>
-    </button>
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+  </button>
 
-    <!-- Header -->
-    <header class="site-header" role="banner">
-      <div class="header-content">
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-content">
+      <div class="logo">
         <h1>Akubrecah Entertainment</h1>
         <p>Design | Print | Brand | Kapenguria, West Pokot</p>
       </div>
-    </header>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="btn">Get Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2>Design it Bold. Print it Perfect.</h2>
+      <p>Akubrecah Entertainment is a modern cybercafe offering a wide range of digital services including graphic design, printing, branding, and internet services in Kapenguria, West Pokot.</p>
+      <a href="contact.html" class="btn">Get Started Today</a>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <main class="main-content" id="main-content" role="main">
-      <section id="home">
-        <h2>Welcome to Akubrecah Entertainment</h2>
-        <p>Akubrecah Entertainment is a modern cybercafe offering a wide range of digital services including graphic design, printing, branding, and internet services in Kapenguria, West Pokot.</p>
-
-        <!-- Counter Game -->
-        <div class="counter-game">
-          <h3>Counter Game</h3>
-          <div class="counter-display" id="counter-value" aria-live="polite">0</div>
-          <div class="counter-buttons">
-            <button id="decrement-btn" aria-label="Decrease counter">-1</button>
-            <button id="reset-btn" aria-label="Reset counter">Reset</button>
-            <button id="increment-btn" aria-label="Increase counter">+1</button>
-          </div>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>We provide comprehensive digital solutions for your business</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-paint-brush"></i>
         </div>
-
-        <!-- JavaScript Demo -->
-        <div class="demo-section">
-          <h3>JavaScript Demo Area</h3>
-          <div class="demo-controls">
-            <button id="welcome-button">Change Welcome Message</button>
-            <button id="color-button">Toggle Background Color</button>
-            <button id="discount-button">Show Special Offer</button>
-          </div>
-          <div class="customer-counter">
-            Today's Visitors: <span id="visitor-count">0</span>
-          </div>
+        <h3>Graphic Design</h3>
+        <p>Professional designs for logos, brochures, flyers, and more</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-print"></i>
         </div>
-
-        <!-- FAQ -->
-        <div class="faq-section">
-          <h3>Frequently Asked Questions</h3>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>What are your business hours?</span>
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" hidden>
-              <p>We are open Monday to Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM. We are closed on Sundays.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Do you offer design services?</span>
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" hidden>
-              <p>Yes, we offer professional graphic design services including logo design, business cards, flyers, brochures, and social media graphics.</p>
-            </div>
-          </div>
+        <h3>Printing Services</h3>
+        <p>High-quality printing for all your business needs</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-globe"></i>
         </div>
-
-        <!-- Animation Demo -->
-        <div class="animation-demo">
-          <h3>Animation Playground</h3>
-          <div class="animated-box" id="animated-box" aria-live="polite">
-            <p>Click buttons to animate me!</p>
-          </div>
-          <div class="demo-controls">
-            <button id="bounce-btn">Bounce</button>
-            <button id="spin-btn">Spin</button>
-            <button id="color-cycle-btn">Color Cycle</button>
-            <button id="reset-animation-btn">Reset</button>
-          </div>
+        <h3>Web Development</h3>
+        <p>Custom websites to establish your online presence</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-wifi"></i>
         </div>
-      </section>
-    </main>
+        <h3>Internet Services</h3>
+        <p>Fast and reliable internet access for all your needs</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" role="complementary">
-      <div class="sidebar-widget">
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-content">
+      <div class="section-title" style="text-align: left;">
+        <h2>About Our Company</h2>
+        <p>The Best in Digital Services</p>
+      </div>
+      
+      <p>Akubrecah Entertainment is a modern cybercafe offering a wide range of digital services including graphic design, printing, branding, and internet services in Kapenguria, West Pokot.</p>
+      
+      <div class="counter-grid" style="grid-template-columns: repeat(2, 1fr); margin: 30px 0;">
+        <div class="counter-item">
+          <h3>500+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="counter-item">
+          <h3>5+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+      
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+    
+    <div class="about-image">
+      <img src="https://dahliaspacetech.com/wp-content/uploads/2025/08/happy-confident-business-coach-wearing-glasses-scaled.jpg" alt="About Akubrecah Entertainment">
+    </div>
+  </section>
+
+  <!-- Counter Section -->
+  <section class="counter-section">
+    <div class="section-title">
+      <h2>We Develop Strategic Solutions for Businesses</h2>
+    </div>
+    
+    <div class="counter-grid">
+      <div class="counter-item">
+        <h3>500+</h3>
+        <p>Projects Completed</p>
+      </div>
+      
+      <div class="counter-item">
+        <h3>250+</h3>
+        <p>Satisfied Clients</p>
+      </div>
+      
+      <div class="counter-item">
+        <h3>5+</h3>
+        <p>Years Experience</p>
+      </div>
+      
+      <div class="counter-item">
+        <h3>24/7</h3>
+        <p>Customer Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="section-title">
+      <h2>What Our Clients Say</h2>
+      <p>Here's what our customers have said about our services</p>
+    </div>
+    
+    <div class="testimonials-container">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "Akubrecah Entertainment delivered exceptional design work for our business. Their attention to detail and professionalism exceeded our expectations."
+        </div>
+        <div class="testimonial-author">- John M., Local Business Owner</div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "The printing quality is outstanding, and their customer service is top-notch. I highly recommend Akubrecah Entertainment for all your design and printing needs."
+        </div>
+        <div class="testimonial-author">- Sarah K., Marketing Manager</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content (Your existing sections) -->
+  <main class="main-content" id="main-content" role="main">
+    <!-- Counter Game -->
+    <div class="counter-game">
+      <h3>Counter Game</h3>
+      <div class="counter-display" id="counter-value" aria-live="polite">0</div>
+      <div class="counter-buttons">
+        <button id="decrement-btn" aria-label="Decrease counter">-1</button>
+        <button id="reset-btn" aria-label="Reset counter">Reset</button>
+        <button id="increment-btn" aria-label="Increase counter">+1</button>
+      </div>
+    </div>
+
+    <!-- JavaScript Demo -->
+    <div class="demo-section">
+      <h3>JavaScript Demo Area</h3>
+      <div class="demo-controls">
+        <button id="welcome-button">Change Welcome Message</button>
+        <button id="color-button">Toggle Background Color</button>
+        <button id="discount-button">Show Special Offer</button>
+      </div>
+      <div class="customer-counter">
+        Today's Visitors: <span id="visitor-count">0</span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What are your business hours?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We are open Monday to Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM. We are closed on Sundays.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you offer design services?</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes, we offer professional graphic design services including logo design, business cards, flyers, brochures, and social media graphics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animation Demo -->
+    <div class="animation-demo">
+      <h3>Animation Playground</h3>
+      <div class="animated-box" id="animated-box" aria-live="polite">
+        <p>Click buttons to animate me!</p>
+      </div>
+      <div class="demo-controls">
+        <button id="bounce-btn">Bounce</button>
+        <button id="spin-btn">Spin</button>
+        <button id="color-cycle-btn">Color Cycle</button>
+        <button id="reset-animation-btn">Reset</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="services.html#printing">Printing Services</a></li>
@@ -114,27 +613,30 @@
           <li><a href="contact.html">Get Quote</a></li>
         </ul>
       </div>
-      <div class="sidebar-widget">
+      
+      <div class="footer-section">
         <h3>Contact Info</h3>
         <p><i class="fas fa-map-marker-alt"></i> Kapenguria, West Pokot</p>
         <p><i class="fas fa-phone"></i> +254 719 299 900</p>
         <p><i class="fas fa-phone"></i> +254 791 497 858</p>
         <p><i class="fas fa-envelope"></i> info@akubrecah.com</p>
       </div>
-    </aside>
-
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="footer-content">
-        <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
+      
+      <div class="footer-section">
+        <h3>Follow Us</h3>
         <div class="social-links">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-    </footer>
-  </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Akubrecah Entertainment. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
